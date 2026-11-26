@@ -1,8 +1,8 @@
 # The World in One Day — Wednesday 25 November 2026
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![make.fun entry](https://img.shields.io/badge/make.fun-news--image--20261125-blue.svg)](https://make.fun/c/news-image-20261125/)
-[![Size: 1024×1024](https://img.shields.io/badge/Image-1024%C3%971024-green.svg)](entry.png)
+[![make.fun · news-image-20261125](https://make.fun/badge/news-image-20261125.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+[![rank](https://make.fun/badge/news-image-20261125/muhamadfajar160299-ctrl/makefun-entry-news-image-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+[![reward](https://make.fun/badge/news-image-20261125/muhamadfajar160299-ctrl/makefun-entry-news-image-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 
 One image summing up the world's news of **Wednesday 25 November 2026**,
 built for the [make.fun](https://make.fun/c/news-image-20261125/)
