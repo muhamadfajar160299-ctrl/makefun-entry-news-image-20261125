@@ -268,17 +268,33 @@ def icon_sudan(draw, x, y, s):
     draw.ellipse([x + 36 * u, y + 8 * u, x + 44 * u, y + 16 * u], fill=(230, 230, 220))
 
 
+def icon_village(draw, x, y, s):
+    _panel(draw, x, y, s, (150, 110, 40))
+    u = s / 52.0
+    draw.rectangle([x + 8 * u, y + 30 * u, x + 22 * u, y + 46 * u], fill=(220, 200, 160))
+    draw.polygon([(x + 6 * u, y + 30 * u), (x + 15 * u, y + 20 * u),
+                  (x + 24 * u, y + 30 * u)], fill=(166, 30, 34))
+    draw.rectangle([x + 28 * u, y + 34 * u, x + 42 * u, y + 46 * u], fill=(200, 180, 140))
+    draw.polygon([(x + 26 * u, y + 34 * u), (x + 35 * u, y + 26 * u),
+                  (x + 44 * u, y + 34 * u)], fill=(120, 30, 30))
+    draw.polygon([(x + 30 * u, y + 8 * u), (x + 36 * u, y + 18 * u),
+                  (x + 32 * u, y + 24 * u), (x + 26 * u, y + 22 * u),
+                  (x + 24 * u, y + 16 * u)], fill=(255, 150, 40))
+    draw.polygon([(x + 31 * u, y + 14 * u), (x + 34 * u, y + 20 * u),
+                  (x + 28 * u, y + 20 * u)], fill=(255, 220, 80))
+
+
 ICONS = {
     "tanker": icon_tanker, "chart": icon_chart, "rocket": icon_rocket,
     "refinery": icon_refinery, "tower": icon_tower, "target": icon_target,
     "drone": icon_drone, "treaty": icon_treaty, "gavel": icon_gavel,
     "cyber": icon_cyber, "fire": icon_fire, "wage": icon_wage,
     "climate": icon_climate, "ball": icon_ball, "racket": icon_racket,
-    "sudan": icon_sudan,
+    "sudan": icon_sudan, "village": icon_village,
 }
 
 # ------------------------------------------------------------------ data
-# 31 stories, all reported on Wednesday 25 November 2026 (UTC).
+# 35 stories, all reported on Wednesday 25 November 2026 (UTC).
 # "(Tue)" = happened on Tuesday 24 Nov, first reported on Wednesday.
 # Claims asserted by one side only carry the hollow-dot marker in text.
 
@@ -349,6 +365,9 @@ CARDS = [
     ("TENNIS", "racket",
      "Sinner out for an extended spell after knee surgery",
      "His team confirmed surgery on his knee."),
+    ("NIGERIA  ·  Tue", "village",
+     "Suspected militants kill at least 30 in Nigeria's Niger state",
+     "At least 30 killed and homes burned, residents say."),
 ]
 
 REST = [
@@ -377,6 +396,10 @@ REST = [
     ("USA", "October inflation 3.8% a year; Q3 growth revised up to 4.3%."),
     ("INDIA", "India condemns the Houthi attack on the Riyadh tower that "
      "injured 11."),
+    ("SYRIA", "Two killed, five wounded in Hasaka, state TV says."),
+    ("QATAR", "F1 race in Doha goes ahead this weekend despite the war."),
+    ("USA  ·  TECH", "Microsoft declares 'Code Red' after its worst-ever "
+     "M365 outage."),
 ]
 
 NUMBERS = [
@@ -469,7 +492,7 @@ def build(out_path):
     d.text((W // 2, 44), "WEDNESDAY  25  NOVEMBER  2026",
            font=SERIF(40), fill=NAVY, anchor="mt")
     rule(d, 60, 92, W - 60, width=2)
-    d.text((W // 2, 98), "31 STORIES  ·  7 REGIONS  ·  EVERYTHING REPORTED ON ONE DAY",
+    d.text((W // 2, 98), "35 STORIES  ·  7 REGIONS  ·  EVERYTHING REPORTED ON ONE DAY",
            font=SANSB(11), fill=GREY, anchor="mt")
     rule(d, 14, 118, W - 14, width=2)
 
@@ -517,15 +540,18 @@ def build(out_path):
                    SANS(9), fill=GREY, leading=11, max_lines=1)
 
     # ---- the rest of the day ---------------------------------------
+    # 3 columns x 6 rows at 23px pitch. The section must end by y=937:
+    # the bottom band rule sits at 942, and each item needs 21px
+    # (2 lines at 11px leading). Rows start at rest_y+21.
     rest_y = 334 + 7 * card_h + 6 * cg + 8
     d.text((14, rest_y), "THE REST OF THE DAY", font=SANSB(12), fill=NAVY)
     rule(d, 14, rest_y + 18, 700, width=1)
-    ly = rest_y + 26
+    ly = rest_y + 21
     col_w2 = 222
     for i, (kick, body) in enumerate(REST):
-        r, c = divmod(i, 5)
+        r, c = divmod(i, 3)
         x = 14 + c * (col_w2 + 12)
-        y = ly + r * 26
+        y = ly + r * 23
         full = kick + " — " + body
         lines = wrap(d, full, SANS(9), col_w2)[:2]
         if lines:

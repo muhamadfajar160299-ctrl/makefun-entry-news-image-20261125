@@ -10,9 +10,9 @@ built for the [make.fun](https://make.fun/c/news-image-20261125/)
 
 ## What it is
 
-A dense cream broadsheet: 31 stories across 9 regions, 3 lead stories
+A dense cream broadsheet: 35 stories across 7 regions, 3 lead stories
 (Hormuz tanker mines, the Wall Street AI sell-off, Shenzhou-24 docking
-with Pakistan's first astronaut), 13 illustrated reports, a "Rest of the
+with Pakistan's first astronaut), 14 illustrated reports, a "Rest of the
 Day" list, a Day in Numbers sidebar, a UTC timeline, a sketch world map,
 and Date Check / How Sure boxes. Every dated event was checked against
 news reported on 25 November 2026; one-sided claims are marked ◐, and
