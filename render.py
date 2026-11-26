@@ -408,8 +408,8 @@ MAP_DOTS = [
     (46.7, 24.6), (56.5, 26.5), (31.2, 30.0), (32.5, 12), (90.4, 23.8),
     (116.4, 39.9), (160, -9.6), (49.9, 40.4),
 ]
-MAP_PLACES = ("Washington · London · Kyiv · Gaza · Riyadh · Hormuz · "
-              "Cairo · Sudan · Dhaka · Beijing · Baku · Solomons")
+MAP_PLACES = ("Washington · Iowa · London · Kyiv · Gaza · Riyadh · "
+              "Hormuz · Cairo · Sudan · Dhaka · Beijing · Baku · Solomons")
 
 # Stylised continents as polygons in lon/lat space (rough sketch).
 CONTINENTS = [
@@ -469,7 +469,7 @@ def build(out_path):
     d.text((W // 2, 44), "WEDNESDAY  25  NOVEMBER  2026",
            font=SERIF(40), fill=NAVY, anchor="mt")
     rule(d, 60, 92, W - 60, width=2)
-    d.text((W // 2, 98), "31 STORIES  ·  9 REGIONS  ·  EVERYTHING REPORTED ON ONE DAY",
+    d.text((W // 2, 98), "31 STORIES  ·  7 REGIONS  ·  EVERYTHING REPORTED ON ONE DAY",
            font=SANSB(11), fill=GREY, anchor="mt")
     rule(d, 14, 118, W - 14, width=2)
 
